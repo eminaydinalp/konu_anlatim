@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Secondpage extends StatelessWidget {
+class Thirdpage extends StatelessWidget {
+  String _content;
+
+  Thirdpage(this._content);
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +15,26 @@ class Secondpage extends StatelessWidget {
       ),
       body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Second Page",
+            _content,
             style: TextStyle(fontSize: 24),
           ),
-          SizedBox(height: 16,),
+          SizedBox(
+            height: 16,
+          ),
           ElevatedButton(
-            onPressed: (){
-              Navigator.pop(context);
+            onPressed: () {
+              Navigator.pop(
+                context,
+                "Gönderilecek Veri"
+              );
             },
-            child: Text("Go Main Page", style: TextStyle(fontSize: 24),),
+            child: Text(
+              "Go Main Page",
+              style: TextStyle(fontSize: 24),
+            ),
           )
         ],
       )),
